@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
+        body {
+            background-color: rgb(241, 199, 206);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+            color: red;
+            text-decoration: underline green;
+        }
+        h3{
+            text-align: center;
+            color: blue;
+        }
+        .div{
+            height: 210vh;
+            border: 2px green solid;
+            padding: 20px;
+        }
+        b{
+            color: red;
+        }
+        li{
+            color: brown;
+        }
+        p{
+            color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Function in js</h1>
+ 
+    <h3>In JavaScript, functions are blocks of code that can be defined and executed when called. <br>Functions are used to perform specific tasks, make code more reusable, and organize it into logical sections.</h3>
+
+     <div class="div">
+    <b>Function Declaration</b>
+<li>A function can be declared using the `function` keyword followed by the function name and parentheses.</li>
+
+<p>
+function greet(name) { <br>
+    console.log("Hello, " + name + "!"); <br>
+} <br>
+
+// Calling the function <br>
+greet('Alice');  // Output: Hello, Alice! <br>
+</p>
+
+<b>Function Expression</b>
+<li>You can also create functions by assigning them to variables. </li>
+<p>
+const greet = function(name) { <br>
+    console.log("Hello, " + name + "!"); <br>
+}; <br>
+
+greet('Bob');  // Output: Hello, Bob! <br>
+</p>
+
+<b>Arrow Functions</b>
+<li>ES6 introduced arrow functions, which are a shorter syntax for writing functions.</li>
+<p>
+const greet = (name) => { <br>
+    console.log("Hello, " + name + "!"); <br>
+}; <br>
+
+greet('Charlie');  // Output: Hello, Charlie! <br>
+</p>
+
+<li>For single expressions, you can omit the curly braces `{}` and the `return` statement.</li>
+<p>
+const greet = (name) => "Hello, " + name + "!"; <br>
+
+console.log(greet('Dave'));  // Output: Hello, Dave!
+</p>
+
+<b>Parameters and Arguments</b>
+<li>Functions can accept parameters and arguments, allowing you to pass values to be used inside the function.</li>
+<p>
+function add(a, b) { <br>
+    return a + b; <br>
+} <br>
+
+console.log(add(2, 3));  // Output: 5 <br>
+</p>
+
+<b>Return Statement</b>
+<li>A function can return a value using the `return` keyword. If no `return` is specified, the function returns `undefined`.</li>
+<p>
+function multiply(a, b) { <br>
+    return a * b; <br>
+} <br>
+
+console.log(multiply(3, 4));  // Output: 12 <br>
+</p>
+
+<b>Function Scope</b>
+<li>Variables declared inside a function are local to that function, meaning they are not accessible outside.</li>
+<p>
+function testScope() { <br>
+    let localVar = 'I am local'; <br>
+    console.log(localVar); <br>
+} <br>
+
+testScope();  // Output: I am local <br>
+// console.log(localVar); // Error: localVar is not defined  <br>
+</p>
+
+<b>Anonymous Functions</b>
+<li>Anonymous functions are functions without names, often used for short-lived or callback functions.</li>
+<p>
+setTimeout(function() { <br>
+    console.log("This runs after 2 seconds"); <br>
+}, 2000); 
+</p>
+
+
+<b>Default Parameters</b>
+<li>You can assign default values to function parameters, which are used when no argument is passed.</li>
+<p>
+function greet(name = "Guest") { <br>
+    console.log("Hello, " + name + "!"); <br>
+} <br>
+
+greet();  // Output: Hello, Guest! <br>
+greet('Eve');  // Output: Hello, Eve! <br>
+</p>
+
+<b>Rest Parameters</b>
+<li>Rest parameters allow you to pass an indefinite number of arguments as an array.</li>
+<p>
+function sum(...numbers) { <br>
+    return numbers.reduce((total, num) => total + num, 0); <br>
+} <br>
+
+console.log(sum(1, 2, 3, 4));  // Output: 10 <br>
+</p>
+
+<b>Function Hoisting</b>
+<li>Function declarations are hoisted to the top of their scope, meaning you can call them before they are defined.</li>
+<p>
+console.log(greet('George'));  // Output: Hello, George! <br>
+
+function greet(name) { <br>
+    return "Hello, " + name; <br>
+} <br>
+</p>
+
+<li>However, function expressions are not hoisted in the same way:</li>
+<p>
+console.log(greet('George'));  // Error: greet is not a function <br>
+
+const greet = function(name) { <br>
+    return "Hello, " + name; <br>
+};
+</p>
+
+</div>
+
+    <script>
+
+        //FUNCTION
+        function hello() {
+            console.log('Good morning!')
+        }
+        hello();
+
+        //if in function
+
+
+        function vote() {
+            let age = 21;
+            if (age >= 18) {
+                console.log('You can vote');
+            } else {
+                console.log('You can not vote');
+            }
+        }
+        vote();
+
+        //loops in function
+        function even0to20() {
+            for (let i = 0; i <= 20; i = i + 2) {
+                console.log('Even=', i);
+            }
+        }
+        even0to20();
+
+        //LODO GAME 
+        function lodo() {
+            let num = Math.floor(Math.random() * 6) + 1;
+            console.log(num);
+        }
+        lodo();
+
+        //FUNCTION ARGUMENTS
+
+        function sum(a, b) {
+            console.log('Sum of a,b is=', a + b);
+            console.log('Diff of a,b is=', a - b);
+            console.log('Product of a,b is=', a * b);
+        }
+        sum(20, 3);
+
+        function wish(name) {
+            console.log(`Good Morning,@${name}`);
+            console.log(`Good Night,@${name}`);
+            console.log(`Happy Birthday,@${name}`);
+        }
+        wish('sagar');
+        wish('laddu');
+
+        //AVERAGE OF THREE NUMBERS 
+        function avg(a, b, c) {
+            let avg = (a + b + c) / 3;
+            console.log(`Average of a,b,c is=`, avg)
+        }
+        avg(1, 2, 3);
+        avg(2, 4, 6);
+        avg(33.5, 67.09, 20.8);
+        console.log(typeof (avg));
+
+        //MULTIPLICATION TABLE OF A NUMBER
+        function multiTable(n) {
+            for (let i = n; i <= (n * 10); i = i + n) {
+                console.log(`MultiTable of ${n}is=`, i);
+            }
+        }
+        multiTable(3);
+        multiTable(10);
+
+
+        //RETURN KEY
+
+        // SUM OF 1TON NUMBERS
+        function getSum(N){
+            let sum =0;
+            for(i=1; i<=N;i++){
+                 sum = sum+i;
+            }
+            return sum;
+        }
+        console.log(getSum(100));
+        console.log(getSum(20));
+
+        //SCOPE IN FUNCTION
+        let add = 30;//Global Scope
+
+        function calSum(a,b){
+            let add = a+b;
+            console.log(`with in the function ${a},${b}sum is=`,add); //Function Scope
+        }
+        calSum(20,30);
+        console.log(`${add} is=`,add);
+
+        //BLOCK SCOPE
+        {
+            const a = 25;
+            console.log('block scope',a);
+        }
+        //console.log(a); if we run this line we get error 
+        
+
+        //FUNCTION EXPRESSION
+
+        let sagar = function(name,age,degree){
+        console.log(`${name} is ${age} Years With ${degree} degree`);
+        
+        }
+        console.log(sagar);
+        sagar('sathish',20,'MCA');
+
+        sagar = function(surname,SO,Address){
+            console.log(`${surname},${SO},${Address}`);
+
+        }
+        console.log(sagar);
+        sagar('ejjagiri','rajaiah','peddapalli');
+
+        //THIS KEY WORD
+        
+   
+       
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
