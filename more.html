@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<h1>OPEN CONSOLE</h1>
+    <script>
+
+        //FUNCTION
+        function hello() {
+            console.log('Good morning!')
+        }
+        hello();
+
+        //if in function
+
+
+        function vote() {
+            let age = 21;
+            if (age >= 18) {
+                console.log('You can vote');
+            } else {
+                console.log('You can not vote');
+            }
+        }
+        vote();
+
+        //loops in function
+        function even0to20() {
+            for (let i = 0; i <= 20; i = i + 2) {
+                console.log('Even=', i);
+            }
+        }
+        even0to20();
+
+        //LODO GAME 
+        function lodo() {
+            let num = Math.floor(Math.random() * 6) + 1;
+            console.log(num);
+        }
+        lodo();
+
+        //FUNCTION ARGUMENTS
+
+        function sum(a, b) {
+            console.log('Sum of a,b is=', a + b);
+            console.log('Diff of a,b is=', a - b);
+            console.log('Product of a,b is=', a * b);
+        }
+        sum(20, 3);
+
+        function wish(name) {
+            console.log(`Good Morning,@${name}`);
+            console.log(`Good Night,@${name}`);
+            console.log(`Happy Birthday,@${name}`);
+        }
+        wish('sagar');
+        wish('laddu');
+
+        //AVERAGE OF THREE NUMBERS 
+        function avg(a, b, c) {
+            let avg = (a + b + c) / 3;
+            console.log(`Average of a,b,c is=`, avg)
+        }
+        avg(1, 2, 3);
+        avg(2, 4, 6);
+        avg(33.5, 67.09, 20.8);
+        console.log(typeof (avg));
+
+        //MULTIPLICATION TABLE OF A NUMBER
+        function multiTable(n) {
+            for (let i = n; i <= (n * 10); i = i + n) {
+                console.log(`MultiTable of ${n}is=`, i);
+            }
+        }
+        multiTable(3);
+        multiTable(10);
+
+
+        //RETURN KEY
+
+        // SUM OF 1TON NUMBERS
+        function getSum(N) {
+            let sum = 0;
+            for (i = 1; i <= N; i++) {
+                sum = sum + i;
+            }
+            return sum;
+        }
+        console.log(getSum(100));
+        console.log(getSum(20));
+
+        //SCOPE IN FUNCTION
+        let add = 30;//Global Scope
+
+        function calSum(a, b) {
+            let add = a + b;
+            console.log(`with in the function ${a},${b}sum is=`, add); //Function Scope
+        }
+        calSum(20, 30);
+        console.log(`${add} is=`, add);
+
+        //BLOCK SCOPE
+        {
+            const a = 25;
+            console.log('block scope', a);
+        }
+        //console.log(a); if we run this line we get error 
+
+
+        //FUNCTION EXPRESSION
+
+        let sagar = function (name, age, degree) {
+            console.log(`${name} is ${age} Years With ${degree} degree`);
+
+        }
+        console.log(sagar);
+        sagar('sathish', 20, 'MCA');
+
+        sagar = function (surname, SO, Address) {
+            console.log(`${surname},${SO},${Address}`);
+
+        }
+        console.log(sagar);
+        sagar('ejjagiri', 'rajaiah', 'peddapalli');
+
+        //THIS KEY WORD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
